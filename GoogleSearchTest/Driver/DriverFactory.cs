@@ -6,7 +6,7 @@ using System;
 
 namespace GoogleSearchTest.Driver
 {
-    class DriverFactory
+    public class DriverFactory
     {
         private static IWebDriver _driver;
         private static WebDriverWait _wait;
@@ -25,25 +25,25 @@ namespace GoogleSearchTest.Driver
             }
         }
 
-        public static IWebDriver InitDriver(string browserName)
+        public static IWebDriver InitializeDriver(string browserName)
         {
             if (browserName == "Chrome")
             {
-                return new ChromeDriver(Environment.CurrentDirectory + "\\..\\..\\..\\Drivers");
+                return new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory + "\\..\\..\\..\\Drivers");
             }
-            return new EdgeDriver(Environment.CurrentDirectory + "\\..\\..\\..\\Drivers");
+            return new EdgeDriver(AppDomain.CurrentDomain.BaseDirectory + "\\..\\..\\..\\Drivers");
         }
 
-        public static WebDriverWait InitWait(IWebDriver driver, int sec)
+        public static WebDriverWait InitializeWait(IWebDriver driver, int timeOutInSeconds)
         {
             if (_wait == null || _driver == null)
             {
-                _wait = SetupDriverWait(driver, sec);
+                _wait = SetupDriverWait(driver, timeOutInSeconds);
             }
             return _wait;
         }
 
-        public static WebDriverWait SetupDriverWait(IWebDriver driver, int sec) => new WebDriverWait(driver, TimeSpan.FromSeconds(sec));
+        private static WebDriverWait SetupDriverWait(IWebDriver driver, int timeOutInSeconds) => new WebDriverWait(driver, TimeSpan.FromSeconds(timeOutInSeconds));
 
         public static void QuitDriver()
         {

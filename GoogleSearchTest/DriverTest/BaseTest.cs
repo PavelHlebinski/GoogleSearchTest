@@ -1,13 +1,13 @@
 ﻿using GoogleSearchTest.Driver;
 using GoogleSearchTest.Pages;
+using GoogleSearchTest.Settings;
 using NUnit.Framework;
-using System.Configuration;
 
 namespace GoogleSearchTest.DriverTest
 {
-    class BaseTest
+    public class BaseTest
     {
-        private readonly string url = ConfigurationManager.AppSettings["URL"];
+        private readonly string url = AppSettings.ReadSettings().URL;
         protected readonly GooglePage googlePage = new GooglePage();
 
         [SetUp]
