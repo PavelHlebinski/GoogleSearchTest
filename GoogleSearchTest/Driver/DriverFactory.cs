@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using GoogleSearchTest.Settings;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Support.UI;
@@ -11,23 +12,18 @@ namespace GoogleSearchTest.Driver
         private static IWebDriver _driver;
         private static WebDriverWait _wait;
 
-        public static IWebDriver Driver
+        public static IWebDriver InitializeDriver()
         {
-            get
+            if (_driver == null)
             {
-                if (_driver == null)
-                    throw new NullReferenceException("WebDriver not found.");
-                return _driver;
+                _driver = SetupDriver();
             }
-            private set
-            {
-                _driver = value;
-            }
+            return _driver;
         }
 
-        public static IWebDriver InitializeDriver(string browserName)
+        private static IWebDriver SetupDriver()
         {
-            if (browserName == "Chrome")
+            if (AppSettings.ReadSettings().Browser == "Chrome")
             {
                 return new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory + "\\..\\..\\..\\Drivers");
             }
@@ -36,7 +32,7 @@ namespace GoogleSearchTest.Driver
 
         public static WebDriverWait InitializeWait(IWebDriver driver, int timeOutInSeconds)
         {
-            if (_wait == null || _driver == null)
+            if (_wait == null || driver == null)
             {
                 _wait = SetupDriverWait(driver, timeOutInSeconds);
             }
@@ -51,6 +47,8 @@ namespace GoogleSearchTest.Driver
             _driver = null;
             _wait = null;
         }
+
+        public static void CloseDriver() => _driver.Close();
     }
 }
 
