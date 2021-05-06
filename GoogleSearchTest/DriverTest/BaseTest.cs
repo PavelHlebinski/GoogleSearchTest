@@ -17,6 +17,7 @@ namespace GoogleSearchTest.DriverTest
         protected ModalDialogsPage ModalDialogsPage = new ModalDialogsPage();
         protected AccordianPage AccordianPage = new AccordianPage();
         protected AutoCompletePage AutoCompletePage = new AutoCompletePage();
+        protected DataPage DataPage = new DataPage();
 
         [SetUp]
         public void SetUp() => MainPage.OpenPage(url);

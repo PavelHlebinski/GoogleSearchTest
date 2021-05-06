@@ -5,17 +5,17 @@ namespace GoogleSearchTest.Tests
 {
     public class FramesTests : BaseTest
     {
-        [TestCase("This is a sample page", TestName = "Big Frame Test")]
-        public void BigFrameTest(string text)
+        [TestCase("Alerts, Frame & Windows", "Frames", "This is a sample page", TestName = "Big Frame Test")]
+        public void BigFrameTest(string mainButtonName, string expnadButtonName, string text)
         {
-            MainPage.OpenFramesPage();
+            MainPage.OpenPage(mainButtonName, expnadButtonName);
             FramesPage.BigFrameTest(text);
         }
 
-        [TestCase("This is a sample page", TestName = "Small Frame Test")]
-        public void SmallFrameTest(string text)
+        [TestCase("Alerts, Frame & Windows", "Frames", "This is a sample page", TestName = "Small Frame Test")]
+        public void SmallFrameTest(string mainButtonName, string expnadButtonName, string text)
         {
-            MainPage.OpenFramesPage();
+            MainPage.OpenPage(mainButtonName, expnadButtonName);
             FramesPage.SmallFrameTest(text);
         }
     }

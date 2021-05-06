@@ -5,24 +5,24 @@ namespace GoogleSearchTest.Tests
 {
     public class BrowserWindowsTests : BaseTest
     {
-        [TestCase("", TestName = "New Tab Tittle Test")]
-        public void NewTabTittleTest(string title)
+        [TestCase("Alerts, Frame & Windows", "Browser Windows", "", TestName = "New Tab Tittle Test")]
+        public void NewTabTittleTest(string mainButtonName, string expnadButtonName, string title)
         {
-            MainPage.OpenBrowserWindowsPage();
+            MainPage.OpenPage(mainButtonName, expnadButtonName);
             BrowserWindowsPage.NewTabTitleTest(title);
         }
 
-        [TestCase("", TestName = "New Window Tittle Test")]
-        public void NewWindowTittleTest(string title)
+        [TestCase("Alerts, Frame & Windows", "Browser Windows", "", TestName = "New Window Tittle Test")]
+        public void NewWindowTittleTest(string mainButtonName, string expnadButtonName, string title)
         {
-            MainPage.OpenBrowserWindowsPage();
+            MainPage.OpenPage(mainButtonName, expnadButtonName);
             BrowserWindowsPage.NewWindowTitleTest(title);
         }
 
-        [TestCase(TestName = "New Window Message Tittle Test")]
-        public void NewWindowMessageTittleTest()
+        [TestCase("Alerts, Frame & Windows", "Browser Windows", TestName = "New Window Message Tittle Test")]
+        public void NewWindowMessageTittleTest(string mainButtonName, string expnadButtonName)
         {
-            MainPage.OpenBrowserWindowsPage();
+            MainPage.OpenPage(mainButtonName, expnadButtonName);
             BrowserWindowsPage.NewWindowMessageTitleTest();
         }
     }

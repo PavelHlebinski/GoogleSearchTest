@@ -21,46 +21,10 @@ namespace GoogleSearchTest.Pages.DemoqaPages
             }
         }
 
-        public void OpenFormsPage()
+        public void OpenPage(string mainButtonName, string expandButtomName)
         {
-            ClickButton(SelectMainButton("Forms"));
-            ClickButton(SelectExpandedButton("Practice Form"));
-        }
-
-        public void OpenBrowserWindowsPage()
-        {
-            ClickButton(SelectMainButton("Alerts, Frame & Windows"));
-            ClickButton(SelectExpandedButton("Browser Windows"));
-        }
-
-        public void OpenAlertsPage()
-        {
-            ClickButton(SelectMainButton("Alerts, Frame & Windows"));
-            ClickButton(SelectExpandedButton("Alerts"));
-        }
-
-        public void OpenFramesPage()
-        {
-            ClickButton(SelectMainButton("Alerts, Frame & Windows"));
-            ClickButton(SelectExpandedButton("Frames"));
-        }
-
-        public void OpenDialogsPage()
-        {
-            ClickButton(SelectMainButton("Alerts, Frame & Windows"));
-            ClickButton(SelectExpandedButton("Modal Dialogs"));
-        }
-
-        public void OpenAccordianPage()
-        {
-            ClickButton(SelectMainButton("Widgets"));
-            ClickButton(SelectExpandedButton("Accordian"));
-        }
-
-        public void OpenAutoCompletePage()
-        {
-            ClickButton(SelectMainButton("Widgets"));
-            ClickButton(SelectExpandedButton("Auto Complete"));
+            ClickButton(SelectMainButton(mainButtonName));
+            ClickButton(SelectExpandedButton(expandButtomName));
         }
     }
 }
