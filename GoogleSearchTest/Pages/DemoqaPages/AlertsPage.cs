@@ -12,27 +12,27 @@ namespace GoogleSearchTest.Pages.DemoqaPages
         readonly By promptBoxButton = By.Id("promtButton");
         readonly By promptResult = By.Id("promptResult");
 
-        public void AlertTest(string message)
+        public void IsAlertOpened(string message)
         {
             ClickButton(alertButton);
-            CompareText(AlertsHelpers.GetAlertText(driver), message);
+            CheckHelpers.CompareText(AlertsHelpers.GetAlertText(driver), message);
             AlertsHelpers.AcceptAlert(driver);
         }
 
-        public void AlertTimerTest(string message)
+        public void IsTimerAlertOpened(string message)
         {
             ClickButton(timerAlertButton);
             wait.Until(drver => AlertsHelpers.IsAlertShown(driver));
-            CompareText(AlertsHelpers.GetAlertText(driver), message);
+            CheckHelpers.CompareText(AlertsHelpers.GetAlertText(driver), message);
             AlertsHelpers.AcceptAlert(driver);
         }
 
         public void ConfirmBoxTest(string message, string confirmMessage)
         {
             ClickButton(confirmBoxtButton);
-            CompareText(AlertsHelpers.GetAlertText(driver), message);
+            CheckHelpers.CompareText(AlertsHelpers.GetAlertText(driver), message);
             AlertsHelpers.AcceptAlert(driver);
-            CompareText(confirmResult, confirmMessage);
+            CheckHelpers.CompareText(wait, confirmResult, confirmMessage);
         }
 
         public void PromptBoxButton(string text)
@@ -40,7 +40,7 @@ namespace GoogleSearchTest.Pages.DemoqaPages
             ClickButton(promptBoxButton);
             AlertsHelpers.SendAlertText(driver, text);
             AlertsHelpers.AcceptAlert(driver);
-            CompareText(promptResult, text);
+            CheckHelpers.CompareText(wait, promptResult, text);
         }
     }
 }

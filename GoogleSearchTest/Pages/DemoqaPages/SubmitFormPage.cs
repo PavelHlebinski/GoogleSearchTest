@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using GoogleSearchTest.Helpers;
+using OpenQA.Selenium;
 
 namespace GoogleSearchTest.Pages.DemoqaPages
 {
@@ -16,7 +17,7 @@ namespace GoogleSearchTest.Pages.DemoqaPages
             string[] temp = new string[] { firstName + " " + lastName, email, "Male", mobileNumber, dateOfBirth, subject, "Sport", "test.jpg", address, "NCR Gurgaon" };
             for (int i = 1; i < 10; i++)
             {
-                CompareText(GetElement(i), temp[i - 1]);
+                CheckHelpers.CompareText(wait, GetElement(i), temp[i - 1]);
             }
             ClickButton(closeButton);
         }

@@ -35,7 +35,7 @@ namespace GoogleSearchTest.Pages.DemoqaPages
             SendInfo(subjectField, subject);
             PressKeysHelpers.PressEnter(wait, subjectField);
             ClickButton(hobbiesRadioButton);
-            SendInfo(addPictureButtun, AppDomain.CurrentDomain.BaseDirectory + "test.jpg");
+            SendInfo(addPictureButtun, AppDomain.CurrentDomain.BaseDirectory + "\\Image\\test.jpg");
             SendInfo(addressField, address);
             ClickButton(stateDropdown);
             ClickButton(stateDropdownValue);

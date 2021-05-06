@@ -12,13 +12,13 @@ namespace GoogleSearchTest.Pages.DemoqaPages
         public void BigFrameTest(string text)
         {
             BrowserHelpers.SwitchFrame(driver, bigFrame);
-            CompareText(frameText, text);
+            CheckHelpers.CompareText(wait, frameText, text);
         }
 
         public void SmallFrameTest(string text)
         {
             BrowserHelpers.SwitchFrame(driver, smallFrame);
-            CompareText(frameText, text);
+            CheckHelpers.CompareText(wait, frameText, text);
         }
     }
 }

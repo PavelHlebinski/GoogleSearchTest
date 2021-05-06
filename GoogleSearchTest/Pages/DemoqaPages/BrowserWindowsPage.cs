@@ -13,15 +13,16 @@ namespace GoogleSearchTest.Pages.DemoqaPages
         {
             ClickButton(newTabButton);
             BrowserHelpers.SwitchTab(driver, 1);
-            CompareText(title);
+            CheckHelpers.CompareText(driver, title);
             BrowserHelpers.CloseTab(driver, 1);
+            BrowserHelpers.SwitchTab(driver, 0);
         }
 
         public void NewWindowTitleTest(string title)
         {
             ClickButton(newWindowButton);
             BrowserHelpers.SwitchWindow(driver);
-            CompareText(title);
+            CheckHelpers.CompareText(driver, title);
             BrowserHelpers.CloseWindow(driver);
         }
 
@@ -29,6 +30,7 @@ namespace GoogleSearchTest.Pages.DemoqaPages
         {
             ClickButton(newWindowMessageButton);
             BrowserHelpers.CloseWindow(driver);
+            BrowserHelpers.SwitchTab(driver, 0);
         }
     }
 }

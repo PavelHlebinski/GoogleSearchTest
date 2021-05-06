@@ -9,14 +9,14 @@ namespace GoogleSearchTest.Tests
         public void AlertTest(string message)
         {
             MainPage.OpenAlertsPage();
-            AlertsPage.AlertTest(message);
+            AlertsPage.IsAlertOpened(message);
         }
 
         [TestCase("This alert appeared after 5 seconds", TestName = "Timer Alert Test")]
         public void TimerAlertTest(string message)
         {
             MainPage.OpenAlertsPage();
-            AlertsPage.AlertTimerTest(message);
+            AlertsPage.IsTimerAlertOpened(message);
         }
 
         [TestCase("Do you confirm action?", "You selected Ok", TestName = "Confirm Box Test")]

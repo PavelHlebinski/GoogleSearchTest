@@ -19,7 +19,7 @@ namespace GoogleSearchTest.Tests
             BrowserWindowsPage.NewWindowTitleTest(title);
         }
 
-        [TestCase(TestName = "New Window Mesage Tittle Test")]
+        [TestCase(TestName = "New Window Message Tittle Test")]
         public void NewWindowMessageTittleTest()
         {
             MainPage.OpenBrowserWindowsPage();
