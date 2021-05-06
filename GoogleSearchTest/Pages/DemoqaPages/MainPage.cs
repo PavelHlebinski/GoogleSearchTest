@@ -50,5 +50,17 @@ namespace GoogleSearchTest.Pages.DemoqaPages
             ClickButton(SelectMainButton("Alerts, Frame & Windows"));
             ClickButton(SelectExpandedButton("Modal Dialogs"));
         }
+
+        public void OpenAccordianPage()
+        {
+            ClickButton(SelectMainButton("Widgets"));
+            ClickButton(SelectExpandedButton("Accordian"));
+        }
+
+        public void OpenAutoCompletePage()
+        {
+            ClickButton(SelectMainButton("Widgets"));
+            ClickButton(SelectExpandedButton("Auto Complete"));
+        }
     }
 }
