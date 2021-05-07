@@ -3,7 +3,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace GoogleSearchTest.Helpers
 {
-    public class PressKeysHelpers
+    public class KeysHelpers
     {
         public static void PressEnter(WebDriverWait wait, By locator) => WaitHelpers.WaitClicableElement(locator, wait).SendKeys(Keys.Enter);
 

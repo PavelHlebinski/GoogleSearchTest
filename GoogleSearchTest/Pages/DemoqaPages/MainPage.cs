@@ -21,9 +21,17 @@ namespace GoogleSearchTest.Pages.DemoqaPages
             }
         }
 
-        public void OpenPage(string mainButtonName, string expandButtomName)
+        public void OpenPageForTests(string mainButtonName, string expandButtomName)
         {
             ClickButton(SelectMainButton(mainButtonName));
+            ClickButton(SelectExpandedButton(expandButtomName));
+
+        }
+
+        public void ScrollOpenPageForTests(string mainButtonName, string expandButtomName)
+        {
+            ClickButton(SelectMainButton(mainButtonName));
+            ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollTo(0, document.body.scrollHeight - 50)");
             ClickButton(SelectExpandedButton(expandButtomName));
         }
     }

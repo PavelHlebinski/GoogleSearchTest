@@ -8,7 +8,7 @@ namespace GoogleSearchTest.Tests
         [TestCase("Widgets", "Accordian", "text of the printing and typesetting industry.", "Lorem Ipsum is not simply", "will be distracted", TestName = "Accordian text Test")]
         public void AccordianTextTest(string mainButtonName, string expnadButtonName, string firstText, string secondText, string thirdtext)
         {
-            MainPage.OpenPage(mainButtonName, expnadButtonName);
+            MainPage.OpenPageForTests(mainButtonName, expnadButtonName);
             AccordianPage.IsAccordianTextPresent(firstText, secondText, thirdtext);
         }
     }

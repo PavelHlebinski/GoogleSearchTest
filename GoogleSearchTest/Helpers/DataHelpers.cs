@@ -7,8 +7,8 @@ namespace GoogleSearchTest.Helpers
     {
         public static bool IsDataFormatCorrect(string data)
         {
-            string[] formats = { "mm/dd/yyyy" };
-            if (DateTime.TryParseExact(data, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
+            string[] format = { "mm/dd/yyyy" };
+            if (DateTime.TryParseExact(data, format, CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
             {
                 return true;
             }
@@ -20,8 +20,8 @@ namespace GoogleSearchTest.Helpers
 
         public static bool IsDataTimeFormatCorrect(string data)
         {
-            string[] formats = { "MMMM d, yyyy hh:mm tt" };
-            if (DateTime.TryParseExact(data, formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
+            string[] format = { "MMMM d, yyyy hh:mm tt" };
+            if (DateTime.TryParseExact(data, format, CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
             {
                 return true;
             }

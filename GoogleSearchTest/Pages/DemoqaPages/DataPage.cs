@@ -8,17 +8,8 @@ namespace GoogleSearchTest.Pages.DemoqaPages
         readonly By dateField = By.Id("datePickerMonthYearInput");
         readonly By dateTimeField = By.Id("dateAndTimePickerInput");
 
-        public void CopmareDateFormat()
-        {
-            string data = WaitHelpers.WaitPresentElement(dateField, wait).GetAttribute("value");
-            string checkResult = DataHelpers.IsDataFormatCorrect(data).ToString();
-            CheckHelpers.CompareText(checkResult, "True");
-        }
-        public void CopmareDateTimeFormat()
-        {
-            string data = WaitHelpers.WaitPresentElement(dateTimeField, wait).GetAttribute("value");
-            string checkResult = DataHelpers.IsDataTimeFormatCorrect(data).ToString();
-            CheckHelpers.CompareText(checkResult, "True");
-        }
+        public void CopmareDateFormat() => DataHelpers.IsDataFormatCorrect(WaitHelpers.WaitPresentElement(dateField, wait).GetAttribute("value"));
+
+        public void CopmareDateTimeFormat() => DataHelpers.IsDataTimeFormatCorrect(WaitHelpers.WaitPresentElement(dateTimeField, wait).GetAttribute("value"));
     }
 }

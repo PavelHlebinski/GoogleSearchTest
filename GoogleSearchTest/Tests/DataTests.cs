@@ -8,14 +8,14 @@ namespace GoogleSearchTest.Tests
         [TestCase("Widgets", "Date Picker", TestName = "Simple Data Format Test")]
         public void SimpleDataFormatTest(string mainButtonName, string expandButtonName)
         {
-            MainPage.OpenPage(mainButtonName, expandButtonName);
+            MainPage.OpenPageForTests(mainButtonName, expandButtonName);
             DataPage.CopmareDateFormat();
         }
 
         [TestCase("Widgets", "Date Picker", TestName = "Data Time Format Test")]
         public void DataTimeFormatTest(string mainButtonName, string expandButtonName)
         {
-            MainPage.OpenPage(mainButtonName, expandButtonName);
+            MainPage.OpenPageForTests(mainButtonName, expandButtonName);
             DataPage.CopmareDateTimeFormat();
         }
     }

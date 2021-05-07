@@ -18,6 +18,9 @@ namespace GoogleSearchTest.DriverTest
         protected AccordianPage AccordianPage = new AccordianPage();
         protected AutoCompletePage AutoCompletePage = new AutoCompletePage();
         protected DataPage DataPage = new DataPage();
+        protected ProgressBarPage ProgressBarPage = new ProgressBarPage();
+        protected MenuPage MenuPage = new MenuPage();
+        protected SelectMenu SelectMenu = new SelectMenu();
 
         [SetUp]
         public void SetUp() => MainPage.OpenPage(url);

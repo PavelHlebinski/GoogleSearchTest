@@ -15,9 +15,9 @@ namespace GoogleSearchTest.Pages.DemoqaPages
         public void AddFewValues(string firstValue, string secondValue)
         {
             SendInfo(multipleField, firstValue);
-            PressKeysHelpers.PressEnter(wait, multipleField);
+            KeysHelpers.PressEnter(wait, multipleField);
             SendInfo(multipleField, secondValue);
-            PressKeysHelpers.PressEnter(wait, multipleField);
+            KeysHelpers.PressEnter(wait, multipleField);
             WaitHelpers.WaitPresentElement(multiplefieldFirstValue, wait);
             WaitHelpers.WaitPresentElement(multiplefieldSecondValue, wait);
             ClickButton(multipleFielDeleteButton);
@@ -27,8 +27,8 @@ namespace GoogleSearchTest.Pages.DemoqaPages
         public void SelectValue(string letter, string value)
         {
             SendInfo(singleLineField, letter);
-            PressKeysHelpers.PressDown(wait, singleLineField);
-            PressKeysHelpers.PressEnter(wait, singleLineField);
+            KeysHelpers.PressDown(wait, singleLineField);
+            KeysHelpers.PressEnter(wait, singleLineField);
             CheckHelpers.CompareText(wait, singleLineFieldValue, value);
         }
     }
