@@ -12,17 +12,17 @@ namespace GoogleSearchTest.Pages.DemoqaPages
         public void IsProgressBarComplete()
         {
             ClickButton(startButton);
-            WaitHelpers.WaitPresentElement(resetButton, wait);
-            CheckHelpers.CompareText(driver.FindElement(progressBar).GetAttribute("class"), "success");
+            WaitHelpers.WaitPresentElement(resetButton, Wait);
+            CheckHelpers.CompareText(Driver.FindElement(progressBar).GetAttribute("class"), "success");
         }
 
         public void IsProgressBarReset()
         {
             ClickButton(startButton);
-            WaitHelpers.WaitPresentElement(resetButton, wait);
-            CheckHelpers.CompareText(driver.FindElement(progressBar).GetAttribute("class"), "success");
+            WaitHelpers.WaitPresentElement(resetButton, Wait);
+            CheckHelpers.CompareText(Driver.FindElement(progressBar).GetAttribute("class"), "success");
             ClickButton(resetButton);
-            CheckHelpers.CompareText(driver.FindElement(progressBar).GetAttribute("class"), "info");
+            CheckHelpers.CompareText(Driver.FindElement(progressBar).GetAttribute("class"), "info");
         }
     }
 }

@@ -13,7 +13,7 @@ namespace GoogleSearchTest.Pages.DemoqaPages
         {
             try
             {
-                driver.Navigate().GoToUrl(url);
+                Driver.Navigate().GoToUrl(url);
             }
             catch
             {
@@ -31,7 +31,7 @@ namespace GoogleSearchTest.Pages.DemoqaPages
         public void ScrollOpenPageForTests(string mainButtonName, string expandButtomName)
         {
             ClickButton(SelectMainButton(mainButtonName));
-            ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollTo(0, document.body.scrollHeight - 50)");
+            ((IJavaScriptExecutor)Driver).ExecuteScript("window.scrollTo(0, document.body.scrollHeight - 50)");
             ClickButton(SelectExpandedButton(expandButtomName));
         }
     }

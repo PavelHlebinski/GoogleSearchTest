@@ -9,7 +9,7 @@ namespace GoogleSearchTest.Tests
         public void AccordianTextTest(string mainButtonName, string expnadButtonName, string firstText, string secondText, string thirdtext)
         {
             MainPage.OpenPageForTests(mainButtonName, expnadButtonName);
-            AccordianPage.IsAccordianTextPresent(firstText, secondText, thirdtext);
+            AccordianPage.ShowAccordianText(firstText, secondText, thirdtext);
         }
     }
 }

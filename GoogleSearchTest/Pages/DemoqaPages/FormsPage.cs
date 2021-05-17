@@ -29,11 +29,11 @@ namespace GoogleSearchTest.Pages.DemoqaPages
             SendInfo(emailField, email);
             ClickButton(getnderRadioButton);
             SendInfo(mobileNumberField, mobileNumber);
-            KeysHelpers.SelectAllValues(wait, dateOfBirthField);
+            KeysHelpers.SelectAllValues(Wait, dateOfBirthField);
             SendInfo(dateOfBirthField, dateOfBirth);
-            KeysHelpers.PressEnter(wait, dateOfBirthField);
+            KeysHelpers.PressEnter(Wait, dateOfBirthField);
             SendInfo(subjectField, subject);
-            KeysHelpers.PressEnter(wait, subjectField);
+            KeysHelpers.PressEnter(Wait, subjectField);
             ClickButton(hobbiesRadioButton);
             SendInfo(addPictureButtun, AppDomain.CurrentDomain.BaseDirectory + "\\Image\\test.jpg");
             SendInfo(addressField, address);

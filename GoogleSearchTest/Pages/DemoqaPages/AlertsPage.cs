@@ -15,32 +15,32 @@ namespace GoogleSearchTest.Pages.DemoqaPages
         public void IsAlertOpened(string message)
         {
             ClickButton(alertButton);
-            CheckHelpers.CompareText(AlertsHelpers.GetAlertText(driver), message);
-            AlertsHelpers.AcceptAlert(driver);
+            CheckHelpers.CompareText(AlertsHelpers.GetAlertText(Driver), message);
+            AlertsHelpers.AcceptAlert(Driver);
         }
 
         public void IsTimerAlertOpened(string message)
         {
             ClickButton(timerAlertButton);
-            wait.Until(drver => AlertsHelpers.IsAlertShown(driver));
-            CheckHelpers.CompareText(AlertsHelpers.GetAlertText(driver), message);
-            AlertsHelpers.AcceptAlert(driver);
+            Wait.Until(drver => AlertsHelpers.IsAlertShown(Driver));
+            CheckHelpers.CompareText(AlertsHelpers.GetAlertText(Driver), message);
+            AlertsHelpers.AcceptAlert(Driver);
         }
 
         public void ConfirmBoxTest(string message, string confirmMessage)
         {
             ClickButton(confirmBoxtButton);
-            CheckHelpers.CompareText(AlertsHelpers.GetAlertText(driver), message);
-            AlertsHelpers.AcceptAlert(driver);
-            CheckHelpers.CompareText(wait, confirmResult, confirmMessage);
+            CheckHelpers.CompareText(AlertsHelpers.GetAlertText(Driver), message);
+            AlertsHelpers.AcceptAlert(Driver);
+            CheckHelpers.CompareText(Wait, confirmResult, confirmMessage);
         }
 
         public void PromptBoxButton(string text)
         {
             ClickButton(promptBoxButton);
-            AlertsHelpers.SendAlertText(driver, text);
-            AlertsHelpers.AcceptAlert(driver);
-            CheckHelpers.CompareText(wait, promptResult, text);
+            AlertsHelpers.SendAlertText(Driver, text);
+            AlertsHelpers.AcceptAlert(Driver);
+            CheckHelpers.CompareText(Wait, promptResult, text);
         }
     }
 }

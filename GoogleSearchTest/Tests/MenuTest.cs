@@ -9,7 +9,7 @@ namespace GoogleSearchTest.Tests
         public void SubItemClicabletest(string mainButtonName, string expnadButtonName)
         {
             MainPage.ScrollOpenPageForTests(mainButtonName, expnadButtonName);
-            MenuPage.IsSubItemClicable();
+            MenuPage.ClickSubItem();
         }
     }
 }

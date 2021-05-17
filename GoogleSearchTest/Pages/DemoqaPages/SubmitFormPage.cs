@@ -14,7 +14,7 @@ namespace GoogleSearchTest.Pages.DemoqaPages
             string[] temp = new string[] { firstName + " " + lastName, email, "Male", mobileNumber, dateOfBirth, subject, "Sport", "test.jpg", address, "NCR Gurgaon" };
             for (int i = 1; i < 10; i++)
             {
-                CheckHelpers.CompareText(wait, GetElement(i), temp[i - 1]);
+                CheckHelpers.CompareText(Wait, GetElement(i), temp[i - 1]);
             }
             ClickButton(closeButton);
         }

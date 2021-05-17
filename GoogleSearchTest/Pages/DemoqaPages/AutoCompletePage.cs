@@ -15,21 +15,21 @@ namespace GoogleSearchTest.Pages.DemoqaPages
         public void AddFewValues(string firstValue, string secondValue)
         {
             SendInfo(multipleField, firstValue);
-            KeysHelpers.PressEnter(wait, multipleField);
+            KeysHelpers.PressEnter(Wait, multipleField);
             SendInfo(multipleField, secondValue);
-            KeysHelpers.PressEnter(wait, multipleField);
-            WaitHelpers.WaitPresentElement(multiplefieldFirstValue, wait);
-            WaitHelpers.WaitPresentElement(multiplefieldSecondValue, wait);
+            KeysHelpers.PressEnter(Wait, multipleField);
+            WaitHelpers.WaitPresentElement(multiplefieldFirstValue, Wait);
+            WaitHelpers.WaitPresentElement(multiplefieldSecondValue, Wait);
             ClickButton(multipleFielDeleteButton);
-            CheckHelpers.CompareText(wait, multipleField, "");
+            CheckHelpers.CompareText(Wait, multipleField, "");
         }
 
         public void SelectValue(string letter, string value)
         {
             SendInfo(singleLineField, letter);
-            KeysHelpers.PressDown(wait, singleLineField);
-            KeysHelpers.PressEnter(wait, singleLineField);
-            CheckHelpers.CompareText(wait, singleLineFieldValue, value);
+            KeysHelpers.PressDown(Wait, singleLineField);
+            KeysHelpers.PressEnter(Wait, singleLineField);
+            CheckHelpers.CompareText(Wait, singleLineFieldValue, value);
         }
     }
 }

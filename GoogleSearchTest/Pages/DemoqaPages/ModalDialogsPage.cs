@@ -11,23 +11,22 @@ namespace GoogleSearchTest.Pages.DemoqaPages
         readonly By closeSmallDialogButton = By.Id("closeSmallModal");
         readonly By closeLargeDialogButton = By.Id("closeLargeModal");
 
-
         public void SmallModalWindowTest(string text)
         {
             ClickButton(smallModalButton);
-            WaitHelpers.WaitPresentElement(modalWindow, wait);
-            CheckHelpers.CompareText(BrowserHelpers.GetDialogText(driver), text);
+            WaitHelpers.WaitPresentElement(modalWindow, Wait);
+            CheckHelpers.CompareText(BrowserHelpers.GetDialogText(Driver), text);
             ClickButton(closeSmallDialogButton);
-            BrowserHelpers.IsDialogShown(driver, modalWindow);
+            BrowserHelpers.IsDialogShown(Driver, modalWindow);
         }
 
         public void LargeModalWindowTest(string text)
         {
             ClickButton(largeModalButton);
-            WaitHelpers.WaitPresentElement(modalWindow, wait);
-            CheckHelpers.CompareText(BrowserHelpers.GetDialogText(driver), text);
+            WaitHelpers.WaitPresentElement(modalWindow, Wait);
+            CheckHelpers.CompareText(BrowserHelpers.GetDialogText(Driver), text);
             ClickButton(closeLargeDialogButton);
-            BrowserHelpers.IsDialogShown(driver, modalWindow);
+            BrowserHelpers.IsDialogShown(Driver, modalWindow);
         }
     }
 }

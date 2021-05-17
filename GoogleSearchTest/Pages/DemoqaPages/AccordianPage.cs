@@ -1,5 +1,6 @@
 ﻿using GoogleSearchTest.Helpers;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace GoogleSearchTest.Pages.DemoqaPages
 {
@@ -11,15 +12,17 @@ namespace GoogleSearchTest.Pages.DemoqaPages
         readonly By section3Button = By.Id("section3Heading");
         readonly By section3Content = By.Id("section3Content");
 
-        public void IsAccordianTextPresent(string firstText, string secondText, string thirdtext)
+        public void ShowAccordianText(string firstText, string secondText, string thirdtext)
         {
-            CheckHelpers.CompareText(wait, section1Content, firstText);
-            ClickButton(section2Button);
-            WaitHelpers.WaitVisibleElement(section2Content, wait);
-            CheckHelpers.CompareText(wait, section2Content, secondText);
-            ClickButton(section3Button);
-            WaitHelpers.WaitVisibleElement(section3Content, wait);
-            CheckHelpers.CompareText(wait, section3Content, thirdtext);
+            CheckHelpers.CompareText(Wait, section1Content, firstText);
+            OpenContent(section2Button, section2Content, Wait, secondText);
+            OpenContent(section3Button, section3Content, Wait, thirdtext);
+        }
+
+        private void OpenContent(By button, By content, WebDriverWait wait, string text)
+        {
+            ClickButton(button);           
+            CheckHelpers.CompareText(wait, content, text);
         }
     }
 }

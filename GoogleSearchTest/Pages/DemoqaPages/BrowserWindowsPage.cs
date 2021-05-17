@@ -12,25 +12,25 @@ namespace GoogleSearchTest.Pages.DemoqaPages
         public void NewTabTitleTest(string title)
         {
             ClickButton(newTabButton);
-            BrowserHelpers.SwitchTab(driver, 1);
-            CheckHelpers.CompareText(driver, title);
-            BrowserHelpers.CloseTab(driver, 1);
-            BrowserHelpers.SwitchTab(driver, 0);
+            BrowserHelpers.SwitchTab(Driver, 1);
+            CheckHelpers.CompareText(Driver, title);
+            BrowserHelpers.CloseTab(Driver, 1);
+            BrowserHelpers.SwitchTab(Driver, 0);
         }
 
         public void NewWindowTitleTest(string title)
         {
             ClickButton(newWindowButton);
-            BrowserHelpers.SwitchWindow(driver);
-            CheckHelpers.CompareText(driver, title);
-            BrowserHelpers.CloseWindow(driver);
+            BrowserHelpers.SwitchWindow(Driver);
+            CheckHelpers.CompareText(Driver, title);
+            BrowserHelpers.CloseWindow(Driver);
         }
 
         public void NewWindowMessageTitleTest()
         {
             ClickButton(newWindowMessageButton);
-            BrowserHelpers.CloseWindow(driver);
-            BrowserHelpers.SwitchTab(driver, 0);
+            BrowserHelpers.CloseWindow(Driver);
+            BrowserHelpers.SwitchTab(Driver, 0);
         }
     }
 }

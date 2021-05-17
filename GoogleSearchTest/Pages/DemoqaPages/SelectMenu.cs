@@ -13,19 +13,18 @@ namespace GoogleSearchTest.Pages.DemoqaPages
         readonly By multiselectDropDown = By.XPath("//*[@id=\"selectMenuContainer\"]/div[7]/div/div/div/div[1]");
         readonly By standartMultiselect = By.Id("cars");
 
-
         public void FillFields(string value, string carName)
         {
             ClickButton(selectValueField);
             ClickButton(selectValue);
             ClickButton(selectOneField);
             ClickButton(selectValue);
-            BrowserHelpers.SelectDropDownValueByText(oldStyleMenu, value, wait);
+            BrowserHelpers.SelectDropDownValueByText(oldStyleMenu, value, Wait);
             ClickButton(multiselectDropDown);
             ClickButton(selectValue);
             ClickButton(selectSecondValue);
-            KeysHelpers.PressEnter(wait, standartMultiselect);
-            BrowserHelpers.SelectDropDownValueByText(standartMultiselect, carName, wait);
+            KeysHelpers.PressEnter(Wait, standartMultiselect);
+            BrowserHelpers.SelectDropDownValueByText(standartMultiselect, carName, Wait);
         }
     }
 }

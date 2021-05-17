@@ -9,11 +9,11 @@ namespace GoogleSearchTest.Pages.DemoqaPages
         readonly By subList = By.XPath("//*[@id=\"nav\"]/li[2]/ul/li[3]/a");
         readonly By subItem = By.XPath("//*[@id=\"nav\"]/li[2]/ul/li[3]/ul/li[2]/a");
 
-        public void IsSubItemClicable()
+        public void ClickSubItem()
         {
-            BrowserHelpers.HoverMouse(mainItem2, driver);
-            BrowserHelpers.HoverMouse(subList, driver);
-            WaitHelpers.WaitClicableElement(subItem, wait);
+            BrowserHelpers.HoverMouse(mainItem2, Driver);            
+            BrowserHelpers.HoverMouse(subList, Driver);            
+            WaitHelpers.WaitClicableElement(subItem, Wait);
         }
     }
 }
